@@ -9,13 +9,11 @@ spring:
   cloud:
     gateway:
       routes:
-        - id: productRoute #Identificando la ruta del service de producto
-        - id: gameRoute #Identificando la ruta del service de producto
-          uri: http://localhost:8082/ #URL donde se hará el redirect segun el predicate definido
+        - id: movieRoute #Identificando la ruta del service de producto
+          uri: lb://movie-service #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
-            - Path=/games/**
-        - id: userRoute #Identificando la ruta del service de producto
-        - id: libraryRoute #Identificando la ruta del service de producto
-          uri: http://localhost:8084/ #URL donde se hará el redirect segun el predicate definido
+            - Path=/movies/**
+        - id: catalogRoute #Identificando la ruta del service de producto
+          uri: lb://catalog-service #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
-            - Path=/libraries/**
+            - Path=/catalogs/**
