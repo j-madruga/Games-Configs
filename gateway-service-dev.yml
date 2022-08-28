@@ -13,6 +13,9 @@ spring:
           uri: lb://MOVIE-SERVICE #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
             - Path=/movies/**
+          filters:
+            - AddRequestHeader = movie-request-header, custom REQUEST header to movie-service
+            - AddResponseHeader = movie-response-header, RESPONSE header added to movie-service
         - id: catalogRoute #Identificando la ruta del service de producto
           uri: lb://CATALOG-SERVICE #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
