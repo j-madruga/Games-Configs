@@ -17,7 +17,10 @@ spring:
           uri: lb://CATALOG-SERVICE #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
             - Path=/catalogs/**
-
+  output:
+    ansi:
+      enabled: ALWAYS
+      
 eureka:
   client:
     register-with-eureka: true
