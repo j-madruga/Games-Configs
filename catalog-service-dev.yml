@@ -26,15 +26,19 @@ resilience4j:
         registerHealthIndicator: true
         allowHealthIndicatorToFail: true
 
+health:
+  config:
+    enabled: false
+    
 # Actuator
-# management:
-#   endpoints:
-#     web:
-#       exposure:
-#         include: *
-#   info:
-#     end:
-#       enabled: true
-#   health:
-#     circuitbreakers:
-#       enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+  info:
+    end:
+      enabled: true
+  health:
+    circuitbreakers:
+      enabled: true
