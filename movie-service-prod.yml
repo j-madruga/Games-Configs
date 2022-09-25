@@ -1,6 +1,8 @@
+# Port
 server:
   port: 8083
 
+# Spring
 spring:
   datasource:
     driver-class-name: org.h2.Driver
@@ -14,10 +16,8 @@ spring:
     defer-datasource-initialization: true
     hibernate:
       ddl-auto: create-drop
-  output:
-    ansi:
-      enabled: ALWAYS
 
+# Eureka
 eureka:
   instance:
     hostname: localhost

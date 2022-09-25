@@ -1,6 +1,8 @@
+# Port
 server:
   port: 8084
 
+# Eureka
 eureka:
   instance:
     hostname: localhost
@@ -10,24 +12,29 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
 
+# Circuit Breaker
 resilience4j:
   circuitbreaker:
     instances:
       movie:
         slidingWindowType: COUNT_BASED
-        slidingWindowSize: 6
+        slidingWindowSize: 5
         failureRateThreshold: 50
         automaticTransitionFromOpenToHalfOpenEnabled: true
         waitDurationInOpenState: 15000
         permittedNumberOfCallsInHalfOpenState: 3
         registerHealthIndicator: true
         allowHealthIndicatorToFail: true
-spring:
-  output:
-    ansi:
-      enabled: ALWAYS
-      
+
+# Actuator
 management:
+  endpoints:
+    web:
+      exposure:
+        include: *
+  info:
+    end:
+      enabled: true
   health:
     circuitbreakers:
       enabled: true

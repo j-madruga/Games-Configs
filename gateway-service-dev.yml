@@ -1,7 +1,8 @@
+# Port
 server:
   port: 8080
   
-
+# Spring
 spring:
   cloud:
     gateway:
@@ -17,10 +18,8 @@ spring:
           uri: lb://CATALOG-SERVICE #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
             - Path=/catalogs/**
-  output:
-    ansi:
-      enabled: ALWAYS
-      
+
+# Eureka
 eureka:
   client:
     register-with-eureka: true
