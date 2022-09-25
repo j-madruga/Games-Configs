@@ -27,14 +27,14 @@ resilience4j:
         allowHealthIndicatorToFail: true
 
 # Actuator
-management:
-  endpoints:
-    web:
-      exposure:
-        include: *
-  info:
-    end:
-      enabled: true
-  health:
-    circuitbreakers:
-      enabled: true
+# management:
+#   endpoints:
+#     web:
+#       exposure:
+#         include: *
+#   info:
+#     end:
+#       enabled: true
+#   health:
+#     circuitbreakers:
+#       enabled: true
