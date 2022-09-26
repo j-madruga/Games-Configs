@@ -20,9 +20,9 @@ spring:
           uri: lb://CATALOG-SERVICE #URL donde se hará el redirect segun el predicate definido
           predicates: #RReglas de análisis de una request
             - Path=/catalogs/**
-  zipkin:
-    enabled: true
-    baseUrl: http://192.168.1.37:9411
+  # zipkin:
+  #   enabled: true
+  #   baseUrl: http://192.168.1.37:9411
     
 # Eureka
 eureka:
