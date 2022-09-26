@@ -14,6 +14,12 @@ eureka:
 
 # Circuit Breaker
 resilience4j:
+  retry:
+    instances:
+      movie:
+        maxAttempts: 3
+        waitDuration: 1000
+        retryException[0]: feign.feignException$InternalServerError
   circuitbreaker:
     instances:
       movie:
