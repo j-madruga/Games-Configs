@@ -2,6 +2,12 @@
 server:
   port: 8084
 
+# Zipkin
+spring:
+  zipkin:
+    enabled: true
+    baseUrl: http://192.168.1.37:9411
+
 # Eureka
 eureka:
   instance:
