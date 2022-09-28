@@ -18,7 +18,7 @@ spring:
       ddl-auto: create-drop
   zipkin:
     enabled: true
-    baseUrl: http://192.168.1.37:9411
+    baseUrl: http://zipkin:9411
 
 # Eureka
 eureka:
@@ -28,4 +28,4 @@ eureka:
     register-with-eureka: true
     fetch-registry: true
     service-url:
-      defaultZone: http://localhost:8761/eureka
+      defaultZone: http://eureka-service:8761/eureka
