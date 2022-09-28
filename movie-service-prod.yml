@@ -19,6 +19,15 @@ spring:
   zipkin:
     enabled: true
     baseUrl: http://192.168.1.37:9411
+  rabbitmq:
+    username: guest
+    password: guest
+    host: rabbitmq
+    port: 5672
+
+queue:
+  movie:
+    name: Movie
 
 # Eureka
 eureka:
